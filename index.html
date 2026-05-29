@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sítio-Escola Geranium | Educação Infantil e Fundamental em Taguatinga, DF</title>
+  <meta name="description" content="Escola de educação infantil e fundamental para crianças de 2 a 10 anos em Taguatinga, DF. Metodologia Freinet, educação na natureza, turmas reduzidas. Matrículas abertas!">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-NV29ZNJ9');</script>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JJ7BCYXR10"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-JJ7BCYXR10');</script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&family=Poppins:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="swiper.min.css">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --verde-escuro: #1D4D11;
+      --verde-medio: #3AAA35;
+      --verde-sage: #76B82A;
+      --verde-claro: #B2CB18;
+      --laranja: #F28B2D;
+      --amarelo: #F9B233;
+      --bege: #FFF0C9;
+      --creme: #FFFDF5;
+      --texto: #2A2A2A;
+      --texto-claro: #5E5D5C;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #1DA851;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Poppins', sans-serif; color: var(--texto); background: url('bg-pagina.jpg') repeat; line-height: 1.6; overflow-x: hidden; font-size: 15px; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    h1, h2, h3 { font-family: 'Baloo 2', cursive; font-weight: 700; line-height: 1.2; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 80px 0; }
+
+    /* TAGS E TÍTULOS */
+    .section-tag { display: inline-block; font-family: 'Caveat', cursive; font-size: 1.2rem; font-weight: 600; color: var(--verde-sage); letter-spacing: 0.03em; margin-bottom: 6px; }
+    .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); color: var(--verde-escuro); margin-bottom: 18px; }
+    .section-title span { color: var(--verde-sage); }
+    .section-subtitle { font-size: 1.05rem; color: var(--texto-claro); line-height: 1.7; }
+
+    /* BOTÕES */
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--whatsapp); color: #fff;
+      font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem;
+      padding: 14px 28px; border-radius: 50px; border: none; cursor: pointer;
+      transition: background .2s, transform .15s;
+    }
+    .btn-whatsapp:hover { background: var(--whatsapp-hover); transform: translateY(-2px); }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: #fff;
+      font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem;
+      padding: 13px 28px; border-radius: 50px; border: 2px solid rgba(255,255,255,.8);
+      cursor: pointer; transition: background .2s, transform .15s;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,.15); transform: translateY(-2px); }
+
+    /* WHATSAPP FLUTUANTE */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      width: 58px; height: 58px; background: var(--whatsapp); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4); transition: transform .2s;
+    }
+    .wa-float:hover { transform: scale(1.1); }
+
+    /* HEADER */
+    .header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 14px 24px; display: flex; align-items: center; justify-content: space-between;
+      transition: background .3s, box-shadow .3s;
+    }
+    .header.scrolled { background: rgba(255,253,245,.97); backdrop-filter: blur(10px); box-shadow: 0 2px 14px rgba(0,0,0,.1); }
+    .header-logo img { height: 48px; width: auto; opacity: 0; transform: translateY(-6px); transition: opacity .3s, transform .3s; }
+    .header.scrolled .header-logo img { opacity: 1; transform: translateY(0); }
+    .header-wa {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--whatsapp); color: #fff;
+      font-weight: 600; font-size: .875rem; padding: 10px 18px; border-radius: 50px;
+    }
+    .header-wa-txt { display: none; }
+    @media (min-width: 600px) { .header-wa-txt { display: inline; } }
+
+    /* HERO */
+    .hero {
+      min-height: 100svh; position: relative;
+      background: url('bg-pagina.jpg') repeat;
+      display: flex; align-items: center; overflow: hidden;
+      padding-top: 72px;
+    }
+    .hero-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;
+      width: 100%; padding: 48px 24px 96px;
+    }
+    @media (max-width: 820px) {
+      .hero-grid { grid-template-columns: 1fr; text-align: center; }
+      .hero-btns { justify-content: center; }
+      .hero-visual { display: none; }
+    }
+    .hero-logo { width: 180px; margin-bottom: 22px; }
+    @media (max-width: 820px) { .hero-logo { margin: 0 auto 22px; } }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--bege); color: var(--verde-escuro);
+      border: 1.5px solid var(--verde-claro);
+      font-size: .76rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
+      padding: 5px 14px; border-radius: 50px; margin-bottom: 18px;
+    }
+    .hero-text h1 { font-size: clamp(2.1rem,4.2vw,3.4rem); color: var(--verde-escuro); margin-bottom: 18px; line-height: 1.15; }
+    .hero-text h1 em { color: var(--laranja); font-style: normal; }
+    .hero-text p { color: var(--texto-claro); font-size: 1rem; line-height: 1.8; margin-bottom: 36px; max-width: 460px; }
+    .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+    .btn-outline-dark {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent; color: var(--verde-escuro);
+      font-family: 'Poppins', sans-serif; font-weight: 600; font-size: 1rem;
+      padding: 13px 24px; border-radius: 50px;
+      border: 2px solid var(--verde-escuro); cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline-dark:hover { background: var(--verde-escuro); color: #fff; }
+
+    /* Lado visual do hero */
+    .hero-visual { position: relative; height: 520px; }
+    .hero-blob { position: absolute; border-radius: 50%; filter: blur(52px); pointer-events: none; }
+    .hero-blob-1 { width: 360px; height: 360px; background: var(--verde-sage); opacity: .32; top: 0; right: 8%; }
+    .hero-blob-2 { width: 240px; height: 240px; background: var(--laranja); opacity: .22; bottom: 2%; left: 0; }
+    .hero-foto-main {
+      position: absolute; width: 300px; height: 360px; top: 5%; right: 8%;
+      border-radius: 58% 42% 55% 45% / 46% 54% 46% 54%;
+      overflow: hidden; box-shadow: 0 24px 60px rgba(43,74,30,.28); z-index: 2;
+    }
+    .hero-foto-main img { width: 100%; height: 100%; object-fit: cover; object-position: center bottom; }
+    .hero-foto-sec {
+      position: absolute; width: 210px; height: 230px; bottom: 4%; left: 2%;
+      border-radius: 44% 56% 48% 52% / 54% 46% 54% 46%;
+      overflow: hidden; box-shadow: 0 14px 40px rgba(0,0,0,.18);
+      z-index: 3; border: 5px solid #fff;
+    }
+    .hero-foto-sec img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-float {
+      position: absolute; z-index: 4; background: #fff;
+      border-radius: 50px; padding: 9px 14px;
+      box-shadow: 0 6px 28px rgba(0,0,0,.13);
+      font-size: .76rem; font-weight: 600; font-family: 'Poppins', sans-serif;
+      display: flex; align-items: center; gap: 6px;
+      animation: floatBob 4s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    .hero-float-1 { top: 18%; left: 2%; color: var(--verde-escuro); animation-delay: 0s; }
+    .hero-float-2 { top: 3%; right: 3%; color: var(--laranja); animation-delay: 1s; }
+    .hero-float-3 { bottom: 28%; right: 0%; color: var(--verde-medio); animation-delay: 2.2s; }
+    .hero-float-4 { bottom: 3%; left: 24%; color: var(--verde-escuro); animation-delay: 3.2s; }
+    @keyframes floatBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+    .hero-chips {
+      display: none;
+      flex-wrap: wrap; gap: 8px; margin-top: 24px; justify-content: center;
+    }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--bege); color: var(--verde-escuro);
+      border: 1.5px solid rgba(58,170,53,.25);
+      border-radius: 50px; padding: 6px 12px;
+      font-size: .72rem; font-weight: 600; font-family: 'Poppins', sans-serif;
+    }
+    @media (max-width: 820px) { .hero-chips { display: flex; } }
+    .hero-deco-ring {
+      position: absolute; z-index: 1; width: 90px; height: 90px; border-radius: 50%;
+      border: 3px dashed var(--verde-claro); opacity: .55;
+      bottom: 28%; right: 2%; animation: spinSlow 22s linear infinite;
+    }
+    @keyframes spinSlow { to { transform: rotate(360deg); } }
+    .hero-scroll {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      z-index: 5; animation: bounce 2s infinite; opacity: .6;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }
+
+    /* HERO OPÇÃO 1 — foto de fundo inteira */
+    .hero-full {
+      min-height: 100svh; position: relative;
+      background: url('ar-livre.jpg') center/cover no-repeat;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center; overflow: hidden; padding-top: 72px;
+    }
+    .hero-full-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(29,77,17,.75) 0%, rgba(29,77,17,.55) 55%, rgba(29,77,17,.82) 100%);
+    }
+    .hero-full-content { position: relative; z-index: 2; max-width: 720px; padding: 0 24px; }
+    .hero-full-title { font-family: 'Baloo 2', cursive; font-size: clamp(2.4rem,5vw,3.8rem); color: #fff; margin-bottom: 20px; line-height: 1.15; }
+    .hero-full-title em { color: var(--amarelo); font-style: normal; }
+    .hero-full-sub { color: rgba(255,255,255,.88); font-size: 1.05rem; line-height: 1.85; margin-bottom: 40px; }
+
+    /* SOBRE — foto com forma orgânica */
+    .sobre-foto-wrap { position: relative; }
+    .sobre-foto-wrap::before {
+      content: ''; position: absolute; inset: -24px;
+      background: var(--verde-sage); opacity: .18;
+      border-radius: 50%; filter: blur(32px); z-index: 0;
+    }
+    .sobre-foto { border-radius: 55% 45% 48% 52% / 46% 54% 46% 54%; overflow: hidden; aspect-ratio: 4/3; position: relative; z-index: 1; box-shadow: 0 20px 56px rgba(43,74,30,.2); }
+    .sobre-foto img { width: 100%; height: 100%; object-fit: cover; }
+
+    /* MODAL VÍDEO */
+    .modal-overlay {
+      display: none; position: fixed; inset: 0; background: rgba(0,0,0,.88);
+      z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .modal-overlay.active { display: flex; }
+    .modal-inner { position: relative; width: 100%; max-width: 820px; aspect-ratio: 16/9; background: #000; border-radius: 12px; overflow: hidden; }
+    .modal-inner iframe { width: 100%; height: 100%; }
+    .modal-close {
+      position: absolute; top: -42px; right: 0; color: #fff;
+      font-size: .875rem; font-weight: 600; cursor: pointer;
+      background: none; border: none; display: flex; align-items: center; gap: 6px;
+    }
+
+    /* FREINET BOX */
+    .freinet-box { background: var(--laranja); padding: 64px 24px; text-align: center; }
+    .freinet-box p {
+      font-size: clamp(1rem,2.5vw,1.2rem); color: #fff;
+      max-width: 700px; margin: 0 auto 32px; line-height: 1.85; font-style: italic;
+    }
+
+    /* SOBRE */
+    .sobre { background: var(--creme); }
+    .sobre-grid { display: grid; gap: 48px; align-items: center; }
+    @media (min-width: 768px) { .sobre-grid { grid-template-columns: 1fr 1fr; } }
+    .sobre-texto p { color: var(--texto-claro); line-height: 1.8; margin-bottom: 16px; }
+
+    /* UM DIA NO SÍTIO */
+    .dia { background: var(--bege); }
+    .dia .section-tag { color: var(--verde-sage); }
+    .dia-intro { text-align: center; max-width: 560px; margin: 0 auto 52px; }
+    .dia-intro p { color: var(--texto-claro); font-size: 1rem; }
+    .dia-tabs {
+      display: flex; overflow-x: auto; gap: 0;
+      background: rgba(29,77,17,.07); border-radius: 14px;
+      padding: 5px; margin-bottom: 20px; scrollbar-width: none;
+    }
+    .dia-tabs::-webkit-scrollbar { display: none; }
+    .dia-tab {
+      flex: 1; min-width: 96px; display: flex; flex-direction: column; align-items: center;
+      gap: 3px; background: none; border: none; color: var(--texto-claro);
+      font-family: 'Poppins', sans-serif; font-size: .79rem; font-weight: 600;
+      padding: 14px 8px; border-radius: 10px; cursor: pointer;
+      transition: color .25s, background .25s;
+      position: relative; overflow: hidden; text-align: center; line-height: 1.3;
+    }
+    .dia-tab-hora { font-size: .67rem; font-weight: 400; opacity: .8; margin-top: 2px; }
+    .dia-tab.active { background: var(--verde-escuro); color: #fff; }
+    .dia-tab:hover:not(.active) { color: var(--verde-escuro); }
+    .dia-tab-bar {
+      position: absolute; bottom: 0; left: 0; height: 3px;
+      background: var(--amarelo); width: 0%; border-radius: 2px;
+    }
+    .dia-painel {
+      display: none; border-radius: 18px;
+      padding: 44px 40px; animation: diaIn .38s ease;
+      position: relative; overflow: hidden;
+      background-size: cover; background-position: center;
+      min-height: 220px;
+    }
+    .dia-painel::before {
+      content: ''; position: absolute; inset: 0;
+      background: rgba(8,25,6,.82); border-radius: inherit; z-index: 0;
+    }
+    .dia-painel-inner { position: relative; z-index: 1; }
+    @media (max-width: 640px) { .dia-painel { padding: 30px 20px; } }
+    @keyframes diaIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .dia-painel.active { display: block; }
+    .dia-painel-inner {
+      display: grid; grid-template-columns: 96px 1fr; gap: 36px; align-items: center;
+    }
+    @media (max-width: 580px) {
+      .dia-painel-inner { grid-template-columns: 1fr; text-align: center; }
+    }
+    .dia-icon-wrap {
+      width: 96px; height: 96px; background: rgba(255,255,255,.1);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-size: 2.9rem; flex-shrink: 0;
+    }
+    @media (max-width: 580px) { .dia-icon-wrap { margin: 0 auto 4px; } }
+    .dia-painel-hora {
+      font-size: .74rem; font-weight: 700; color: var(--amarelo);
+      letter-spacing: .12em; text-transform: uppercase; margin-bottom: 10px;
+    }
+    .dia-painel h3 { font-family: 'Baloo 2', cursive; font-size: 1.6rem; color: #fff; margin-bottom: 12px; }
+    .dia-painel p { color: rgba(255,255,255,.7); font-size: .97rem; line-height: 1.85; }
+    .dia-nav { display: flex; justify-content: center; gap: 10px; margin-top: 28px; }
+    .dia-nav-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: rgba(29,77,17,.22); border: none; cursor: pointer; padding: 0;
+      transition: background .25s, transform .25s;
+    }
+    .dia-nav-dot.active { background: var(--verde-escuro); transform: scale(1.4); }
+
+    /* POR QUE ESCOLHER */
+    .porque { background: var(--bege); }
+    .porque-intro { text-align: center; max-width: 660px; margin: 0 auto 48px; }
+    .porque-grid { display: grid; gap: 20px; }
+    @media (min-width: 600px) { .porque-grid { grid-template-columns: 1fr 1fr; } }
+    .porque-card { background: #fff; border-radius: 16px; padding: 28px; border-left: 4px solid var(--verde-sage); }
+    .porque-icon { width: 46px; height: 46px; background: #E8F4D8; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; }
+    .porque-card h3 { font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: var(--verde-escuro); margin-bottom: 8px; }
+    .porque-card p { color: var(--texto-claro); font-size: .93rem; line-height: 1.7; }
+
+    /* PROJETOS */
+    .projetos { background: var(--creme); }
+    .projetos-intro { text-align: center; max-width: 580px; margin: 0 auto 48px; }
+    .projetos-grid { display: grid; gap: 16px; }
+    @media (min-width: 500px) { .projetos-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 860px) { .projetos-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .projeto-card { border-radius: 16px; overflow: hidden; position: relative; aspect-ratio: 4/3; }
+    .projeto-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+    .projeto-card:hover img { transform: scale(1.05); }
+    .projeto-label {
+      position: absolute; bottom: 0; left: 0; right: 0; padding: 16px 18px;
+      background: linear-gradient(to top, rgba(15,32,8,.85), transparent);
+      color: #fff; font-family: 'Poppins', sans-serif; font-weight: 600; font-size: .95rem;
+    }
+
+    /* DEPOIMENTOS ESCRITOS */
+    .dep-escritos { background: var(--bege); }
+    .dep-grid { display: grid; gap: 20px; }
+    @media (min-width: 640px) { .dep-grid { grid-template-columns: 1fr 1fr; } }
+    .dep-card { background: #fff; border-radius: 16px; padding: 28px; }
+    .dep-aspas { font-size: 4.5rem; color: var(--verde-claro); line-height: .9; font-family: 'Caveat', cursive; font-weight: 700; }
+    .dep-stars { color: #F5A623; margin-bottom: 12px; letter-spacing: 2px; }
+    .dep-card p { color: var(--texto-claro); font-size: .93rem; line-height: 1.75; font-style: italic; margin-bottom: 16px; }
+    .dep-nome { font-weight: 600; color: var(--verde-escuro); font-size: .875rem; }
+
+    /* DEPOIMENTOS VÍDEO */
+    .dep-video { background: var(--verde-escuro); padding: 80px 0; overflow: hidden; }
+    .dep-video .section-tag { color: var(--verde-claro); }
+    .dep-video .section-title { color: #fff; }
+    .video-slide { border-radius: 12px; overflow: hidden; aspect-ratio: 16/10; cursor: pointer; position: relative; }
+    .video-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .video-play { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(0,0,0,.28); transition: background .2s; }
+    .video-slide:hover .video-play { background: rgba(0,0,0,.48); }
+    .play-circle { width: 58px; height: 58px; background: rgba(255,255,255,.92); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+    .slider-nav { display: flex; gap: 12px; justify-content: center; margin-top: 28px; }
+    .slider-btn {
+      width: 44px; height: 44px; border-radius: 50%;
+      border: 2px solid rgba(255,255,255,.35); background: transparent; color: #fff;
+      cursor: pointer; display: flex; align-items: center; justify-content: center; transition: border-color .2s, background .2s;
+    }
+    .slider-btn:hover { border-color: #fff; background: rgba(255,255,255,.1); }
+
+    /* HORÁRIOS */
+    .horarios { background: var(--laranja); padding: 64px 24px; text-align: center; }
+    .horarios h2 { font-size: clamp(1.5rem,3vw,2rem); color: #fff; margin-bottom: 36px; }
+    .horarios-grid { display: grid; gap: 16px; max-width: 680px; margin: 0 auto 20px; }
+    @media (min-width: 560px) { .horarios-grid { grid-template-columns: 1fr 1fr; } }
+    .horario-card { background: rgba(255,255,255,.15); border-radius: 14px; padding: 22px 24px; text-align: left; }
+    .horario-card h3 { color: rgba(255,255,255,.75); font-size: .72rem; font-family: 'Poppins', sans-serif; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 10px; }
+    .horario-card p { color: #fff; font-size: 1rem; line-height: 1.6; }
+    .horario-extra { background: rgba(255,255,255,.1); border-radius: 14px; padding: 18px 24px; max-width: 680px; margin: 0 auto; color: rgba(255,255,255,.9); font-size: .93rem; line-height: 1.7; text-align: left; }
+
+    /* PODCAST */
+    .podcast { background: var(--bege); }
+    .podcast-grid { display: grid; gap: 48px; align-items: center; }
+    @media (min-width: 768px) { .podcast-grid { grid-template-columns: 1fr 1fr; } }
+    .podcast-badge { display: inline-block; background: var(--verde-escuro); color: #fff; font-weight: 600; padding: 7px 20px; border-radius: 50px; margin-bottom: 22px; font-size: .875rem; }
+    .podcast-txt p { color: var(--texto-claro); line-height: 1.8; margin-bottom: 14px; }
+    .plataformas { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 24px; }
+    .btn-plataforma {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: var(--verde-escuro); color: #fff;
+      font-size: .85rem; font-weight: 600; padding: 10px 18px; border-radius: 50px;
+      transition: background .2s;
+    }
+    .btn-plataforma:hover { background: var(--verde-medio); }
+    .podcast-logo-organico {
+      position: relative; display: flex; align-items: center; justify-content: center;
+    }
+    .podcast-logo-blob {
+      background: var(--creme);
+      border-radius: 60% 40% 55% 45% / 48% 52% 48% 52%;
+      padding: 52px 48px;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 24px 64px rgba(29,77,17,.15);
+      border: 2px solid rgba(29,77,17,.08);
+      width: 100%;
+    }
+    .podcast-logo-blob img { width: 100%; max-width: 260px; display: block; }
+
+    /* LOCALIZAÇÃO */
+    .localizacao { background: var(--creme); }
+    .loc-grid { display: grid; gap: 48px; }
+    @media (min-width: 768px) { .loc-grid { grid-template-columns: 1fr 1fr; align-items: center; } }
+    .loc-mapa { border-radius: 16px; overflow: hidden; height: 360px; }
+    .loc-mapa iframe { width: 100%; height: 100%; border: 0; }
+    .loc-txt p { color: var(--texto-claro); line-height: 1.8; margin-bottom: 20px; }
+    .endereco-box { display: flex; gap: 12px; align-items: flex-start; background: var(--bege); border-radius: 12px; padding: 16px 20px; margin-bottom: 24px; }
+    .endereco-box p { margin: 0; font-size: .93rem; color: var(--texto-claro); line-height: 1.6; }
+
+    /* RODAPÉ */
+    .rodape {
+      background: var(--verde-escuro); padding: 28px 32px 18px;
+      position: relative; overflow: hidden;
+    }
+    .rodape-idv {
+      position: absolute; opacity: .07; pointer-events: none;
+      width: 200px; bottom: -25px; right: -15px; transform: rotate(20deg);
+    }
+    .rodape-idv-left {
+      position: absolute; opacity: .05; pointer-events: none;
+      width: 150px; top: -15px; left: -8px; transform: rotate(-15deg) scaleX(-1);
+    }
+    .rodape-inner {
+      max-width: 1000px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 20px; flex-wrap: wrap;
+    }
+    .rodape-brand { display: flex; align-items: center; flex-shrink: 0; }
+    .rodape-logo { width: 90px; opacity: .88; display: block; }
+    .rodape-contatos { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center; }
+    .rodape-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      border-radius: 50px; padding: 8px 16px; font-size: .78rem;
+      font-weight: 600; font-family: 'Poppins', sans-serif;
+      transition: opacity .2s; text-decoration: none; white-space: nowrap;
+    }
+    .rodape-btn:hover { opacity: .82; }
+    .rodape-btn-wa { background: var(--whatsapp); color: #fff; }
+    .rodape-btn-tel { background: rgba(255,255,255,.1); color: #fff; border: 1px solid rgba(255,255,255,.2); }
+    .rodape-btn-email { background: rgba(255,255,255,.07); color: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.14); }
+    .rodape-direita { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+    .rodape-social a {
+      width: 34px; height: 34px; border: 1px solid rgba(255,255,255,.22); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.55); transition: border-color .2s, color .2s;
+    }
+    .rodape-social a:hover { border-color: #fff; color: #fff; }
+    .rodape-copy { color: rgba(255,255,255,.28); font-size: .7rem; line-height: 1.5; }
+    @media (max-width: 700px) {
+      .rodape-inner { flex-direction: column; align-items: center; text-align: center; gap: 16px; }
+      .rodape-direita { flex-direction: column; align-items: center; gap: 8px; }
+    }
+
+    /* ÍCONES SVG reutilizável */
+    .ico-wa path { fill: currentColor; }
+
+    /* BANNERS CTA */
+    .cta-banner { background: var(--verde-escuro); padding: 56px 24px; text-align: center; }
+    .cta-banner p { color: rgba(255,255,255,.85); font-size: clamp(1rem,2.5vw,1.2rem); font-family: 'Baloo 2', cursive; margin-bottom: 24px; line-height: 1.4; }
+    .cta-banner-laranja { background: var(--laranja); }
+
+    /* DIVISOR BRAND BOOK */
+    .divisor-bb { width: 100%; display: block; height: auto; pointer-events: none; }
+
+    /* ONDA HERO */
+    .hero-wave { position: absolute; bottom: -2px; left: 0; right: 0; z-index: 3; line-height: 0; }
+    .hero-wave svg { display: block; width: 100%; }
+
+    /* DECORAÇÃO FOLHA em títulos */
+    .leaf-deco { display: inline-block; margin-right: 6px; opacity: .75; }
+
+    /* GALERIA */
+    .galeria { background: var(--bege); }
+    .galeria-intro { text-align: center; max-width: 580px; margin: 0 auto 40px; }
+    .galeria-grid { columns: 3 220px; column-gap: 14px; }
+    @media (max-width: 520px) {
+      .galeria-grid { columns: 2; column-gap: 10px; }
+    }
+    .galeria-item {
+      break-inside: avoid; display: inline-block; width: 100%;
+      margin-bottom: 14px; background: #fff;
+      padding: 7px 7px 28px; position: relative;
+      box-shadow: 3px 5px 18px rgba(0,0,0,.13);
+      cursor: pointer; transition: transform .25s, box-shadow .25s;
+    }
+    @media (max-width: 520px) {
+      .galeria-item { padding: 5px 5px 22px; margin-bottom: 10px; }
+    }
+    .galeria-item:nth-child(3n+1) { transform: rotate(-1.4deg); }
+    .galeria-item:nth-child(3n+2) { transform: rotate(0.7deg); }
+    .galeria-item:nth-child(3n)   { transform: rotate(-0.5deg); }
+    .galeria-item:hover { transform: scale(1.04) rotate(0deg) !important; box-shadow: 6px 10px 30px rgba(0,0,0,.2); z-index: 5; }
+    .galeria-item img { width: 100%; display: block; aspect-ratio: 4/3; object-fit: cover; }
+
+    /* LIGHTBOX */
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,.93); z-index: 3000;
+      align-items: center; justify-content: center; padding: 20px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 88vh; border-radius: 4px; object-fit: contain; }
+    .lightbox-close {
+      position: absolute; top: 18px; right: 22px;
+      width: 42px; height: 42px; border-radius: 50%;
+      background: rgba(255,255,255,.15); color: #fff; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+    }
+    .lightbox-close:hover { background: rgba(255,255,255,.3); }
+
+    /* EVENTOS */
+    .eventos { background: var(--creme); position: relative; }
+    .eventos-intro { text-align: center; max-width: 600px; margin: 0 auto 52px; }
+    .eventos-grid { display: grid; gap: 22px; }
+    @media (min-width: 640px) { .eventos-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 960px) { .eventos-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .evento-card {
+      background: #fff; border-radius: 6px;
+      padding: 28px 24px 24px;
+      box-shadow: 2px 4px 18px rgba(0,0,0,.08);
+      border-top: 5px solid var(--verde-sage);
+      display: flex; flex-direction: column;
+      position: relative; overflow: hidden;
+    }
+    .evento-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--verde-sage), var(--verde-claro));
+    }
+    .evento-data { display: flex; align-items: baseline; gap: 7px; margin-bottom: 16px; }
+    .evento-dia { font-family: 'Baloo 2', cursive; font-size: 3rem; font-weight: 800; color: var(--laranja); line-height: 1; }
+    .evento-mes-ano { display: flex; flex-direction: column; }
+    .evento-mes { font-size: .8rem; font-weight: 700; color: var(--verde-sage); text-transform: uppercase; letter-spacing: .1em; }
+    .evento-ano { font-size: .75rem; color: var(--texto-claro); }
+    .evento-tipo { display: inline-block; background: var(--bege); color: var(--verde-escuro); font-size: .72rem; font-weight: 600; padding: 3px 10px; border-radius: 50px; margin-bottom: 10px; align-self: flex-start; }
+    .evento-card h3 { font-family: 'Baloo 2', cursive; font-size: 1.1rem; color: var(--verde-escuro); margin-bottom: 8px; }
+    .evento-card p { color: var(--texto-claro); font-size: .87rem; line-height: 1.65; flex: 1; }
+    .evento-cta { margin-top: 20px; }
+    .evento-cta a {
+      display: inline-flex; align-items: center; gap: 7px;
+      color: var(--verde-escuro); font-size: .85rem; font-weight: 600; border-bottom: 2px solid var(--verde-claro);
+      padding-bottom: 2px; transition: color .2s, border-color .2s;
+    }
+    .evento-cta a:hover { color: var(--laranja); border-color: var(--laranja); }
+    .eventos-rodape { text-align: center; margin-top: 48px; }
+    .eventos-rodape p { color: var(--texto-claro); font-size: .93rem; margin-bottom: 16px; }
+
+    /* VAZIO (quando não há eventos) */
+    .eventos-vazio { text-align: center; padding: 60px 24px; color: var(--texto-claro); }
+    .eventos-vazio p { font-size: 1rem; }
+
+    /* FAQ */
+    .faq-list { max-width: 780px; margin: 0 auto; }
+    .faq-item { border-bottom: 1px solid rgba(0,0,0,.1); }
+    .faq-pergunta {
+      width: 100%; display: flex; justify-content: space-between; align-items: center;
+      background: none; border: none; cursor: pointer;
+      font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600;
+      color: var(--verde-escuro); text-align: left; padding: 22px 0; gap: 16px;
+      transition: color .2s;
+    }
+    .faq-pergunta:hover { color: var(--verde-medio); }
+    .faq-chevron { flex-shrink: 0; transition: transform .3s; }
+    .faq-pergunta.open .faq-chevron { transform: rotate(180deg); }
+    .faq-pergunta.open { color: var(--verde-medio); }
+    .faq-resposta { max-height: 0; overflow: hidden; transition: max-height .35s ease, padding-bottom .3s; }
+    .faq-resposta.open { max-height: 260px; padding-bottom: 22px; }
+    .faq-resposta p { color: var(--texto-claro); font-size: .95rem; line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NV29ZNJ9" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- WhatsApp flutuante -->
+<a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Encontrei%20o%20site%20de%20voc%C3%AAs%20e%20gostaria%20de%20saber%20mais%20sobre%20a%20escola." target="_blank" class="wa-float" title="Fale no WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- Header -->
+<header class="header" id="header">
+  <div class="header-logo">
+    <img src="logo-sitio-escola-geranium.png" alt="Sítio-Escola Geranium">
+  </div>
+  <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="header-wa">
+    <svg width="17" height="17" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    <span class="header-wa-txt">(61) 99841-4784</span>
+  </a>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO OPÇÃO 1 — Foto de fundo inteira
+     Para ativar: remover style="display:none" aqui e
+     adicionar style="display:none" no HERO OPÇÃO 2 abaixo
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero hero-full" style="display:none" id="hero-full">
+  <div class="hero-full-overlay"></div>
+  <div class="hero-full-content">
+    <img src="logo-sitio-escola-geranium.png" alt="Sítio-Escola Geranium" class="hero-logo" style="filter:brightness(0) invert(1);margin:0 auto 22px;">
+    <div class="hero-badge" style="background:rgba(255,255,255,.15);color:#fff;border-color:rgba(255,255,255,.3);margin-bottom:18px">
+      <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#B2CB18"/></svg>
+      Matrículas abertas
+    </div>
+    <h1 class="hero-full-title">Onde a natureza<br>é a <em>sala de aula</em></h1>
+    <p class="hero-full-sub">Escola de Educação Infantil e Fundamental 1 para crianças de 2 a 10 anos.<br>Metodologia Freinet, aprendizado na natureza e 40 anos de história em Taguatinga, DF.</p>
+    <div class="hero-btns" style="justify-content:center">
+      <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Agende sua visita
+      </a>
+      <button class="btn-outline" onclick="abrirVideo('QTILNO5P2no')">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        Assista o vídeo
+      </button>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C180,72 360,0 540,36 C720,72 900,0 1080,36 C1260,72 1350,18 1440,36 L1440,72 L0,72 Z" fill="#F28B2D"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO OPÇÃO 2 — Layout split (ativo por padrão)
+     ═══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-grid container">
+
+    <!-- TEXTO -->
+    <div class="hero-text">
+      <img src="logo-sitio-escola-geranium.png" alt="Sítio-Escola Geranium" class="hero-logo">
+      <div class="hero-badge">
+        <svg width="8" height="8" viewBox="0 0 8 8"><circle cx="4" cy="4" r="4" fill="#6B8F47"/></svg>
+        Matrículas abertas
+      </div>
+      <h1>Onde a natureza<br>é a <em>sala de aula</em></h1>
+      <p><strong>Escola de Educação Infantil e Fundamental 1</strong> para crianças de 2 a 10 anos. Aprendizado na natureza e 40 anos de história em Taguatinga, DF.</p>
+      <div class="hero-btns">
+        <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agende sua visita
+        </a>
+        <button class="btn-outline-dark" onclick="abrirVideo('QTILNO5P2no')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          Assista o vídeo
+        </button>
+      </div>
+      <div class="hero-chips">
+        <span class="hero-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          Segue a BNCC
+        </span>
+        <span class="hero-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/></svg>
+          Contato com a natureza
+        </span>
+        <span class="hero-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Autonomia
+        </span>
+        <span class="hero-chip">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          Infantil e Fundamental 1
+        </span>
+      </div>
+    </div>
+
+    <!-- VISUAL -->
+    <div class="hero-visual">
+      <div class="hero-blob hero-blob-1"></div>
+      <div class="hero-blob hero-blob-2"></div>
+      <div class="hero-foto-main">
+        <img src="head-1-1.png" alt="Crianças no Sítio-Escola Geranium" loading="eager">
+      </div>
+      <div class="hero-foto-sec">
+        <img src="OneDrive_1_19-05-2026/head 2.jpeg" alt="Aprendizado no sítio" loading="eager">
+      </div>
+      <div class="hero-float hero-float-1">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        Segue a BNCC
+      </div>
+      <div class="hero-float hero-float-2">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/></svg>
+        Contato com a natureza
+      </div>
+      <div class="hero-float hero-float-3">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a5 5 0 1 0 0 10A5 5 0 0 0 12 2z"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Autonomia
+      </div>
+      <div class="hero-float hero-float-4">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        Infantil e Fundamental 1
+      </div>
+      <div class="hero-deco-ring"></div>
+    </div>
+
+  </div>
+  <div class="hero-scroll">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--verde-escuro)" stroke-width="2"><path d="M7 10l5 5 5-5"/></svg>
+  </div>
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 72" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,36 C180,72 360,0 540,36 C720,72 900,0 1080,36 C1260,72 1350,18 1440,36 L1440,72 L0,72 Z" fill="#F28B2D"/>
+    </svg>
+  </div>
+</section>
+
+<!-- Modal vídeo -->
+<div class="modal-overlay" id="modal-video" onclick="fecharVideoClick(event)">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="fecharVideo()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      Fechar
+    </button>
+    <iframe id="video-iframe" src="" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+  </div>
+</div>
+
+<!-- FREINET BOX -->
+<div class="freinet-box">
+  <p>"O Sítio-Escola Geranium une a conexão com a natureza à excelência da metodologia Freinet e Metodologias Ativas, transformando o aprendizado de crianças de 2 a 10 anos em uma experiência viva, com pé no chão e protagonismo. <strong>Venha sentir o cheiro da terra e descobrir como transformamos o aprender em descoberta.</strong>"</p>
+  <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agende sua visita!
+  </a>
+</div>
+
+<!-- SOBRE NÓS -->
+<section class="section sobre">
+  <div class="container">
+    <div class="sobre-grid">
+      <div class="sobre-foto-wrap">
+        <div class="sobre-foto">
+          <img src="OneDrive_2_19-05-2026/nossa proposta.png" alt="Crianças aprendendo no Sítio-Escola Geranium" loading="lazy">
+        </div>
+      </div>
+      <div class="sobre-texto">
+        <span class="section-tag">Nossa proposta</span>
+        <h2 class="section-title">Uma escola onde a <span>natureza e o saber</span> se encontram</h2>
+        <p>Acolhimento, respeito e conexão com a natureza. Aqui, oferecemos o <strong>ensino regular</strong> seguindo todas as diretrizes educacionais para crianças de 2 a 10 anos.</p>
+        <p>No Sítio-Escola Geranium o estudante é protagonista de sua jornada, estimulando a autonomia e a cooperação. Com a referência dos 40 anos de história do Sítio Geranium, oferecemos uma formação integral que valoriza tanto o desenvolvimento acadêmico quanto o bem-estar socioemocional, preparando cidadãos conscientes em um ambiente seguro e inspirador.</p>
+        <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp" style="margin-top:10px">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Quero saber mais
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UM DIA NO SÍTIO -->
+<section class="section dia" id="dia-sitio">
+  <div class="container">
+    <div class="dia-intro">
+      <span class="section-tag">Rotina</span>
+      <h2 class="section-title" style="color:var(--verde-escuro);">Como é um dia <span>aqui no Sítio?</span></h2>
+      <p>Cada manhã é uma nova aventura — com ritmo, liberdade e muito aprendizado.</p>
+    </div>
+
+    <div class="dia-tabs" id="diaTabs" role="tablist">
+      <button class="dia-tab active" id="diaTab0" role="tab" aria-selected="true" aria-controls="diaPainel0" onclick="ativarDia(0)">
+        <span>☀️</span><span>Chegada</span><span class="dia-tab-hora">8h00</span>
+        <span class="dia-tab-bar" id="diaBar0"></span>
+      </button>
+      <button class="dia-tab" id="diaTab1" role="tab" aria-selected="false" aria-controls="diaPainel1" onclick="ativarDia(1)">
+        <span>🟣</span><span>Roda</span><span class="dia-tab-hora">8h30</span>
+        <span class="dia-tab-bar" id="diaBar1"></span>
+      </button>
+      <button class="dia-tab" id="diaTab2" role="tab" aria-selected="false" aria-controls="diaPainel2" onclick="ativarDia(2)">
+        <span>🔨</span><span>Projeto</span><span class="dia-tab-hora">9h00</span>
+        <span class="dia-tab-bar" id="diaBar2"></span>
+      </button>
+      <button class="dia-tab" id="diaTab3" role="tab" aria-selected="false" aria-controls="diaPainel3" onclick="ativarDia(3)">
+        <span>🌿</span><span>Natureza</span><span class="dia-tab-hora">10h00</span>
+        <span class="dia-tab-bar" id="diaBar3"></span>
+      </button>
+      <button class="dia-tab" id="diaTab4" role="tab" aria-selected="false" aria-controls="diaPainel4" onclick="ativarDia(4)">
+        <span>🍎</span><span>Lanche</span><span class="dia-tab-hora">11h00</span>
+        <span class="dia-tab-bar" id="diaBar4"></span>
+      </button>
+      <button class="dia-tab" id="diaTab5" role="tab" aria-selected="false" aria-controls="diaPainel5" onclick="ativarDia(5)">
+        <span>🤝</span><span>Encerramento</span><span class="dia-tab-hora">12h00</span>
+        <span class="dia-tab-bar" id="diaBar5"></span>
+      </button>
+    </div>
+
+    <!-- Painéis -->
+    <div class="dia-painel active" id="diaPainel0" role="tabpanel" aria-labelledby="diaTab0" style="background-image:url('galeria 9.png'); background-position: center 70%;">
+      <div class="dia-painel-inner">
+        <div class="dia-icon-wrap">☀️</div>
+        <div>
+          <p class="dia-painel-hora">8h00 — Chegada</p>
+          <h3>Acolhida no pátio</h3>
+          <p>As crianças chegam ao Sítio e são recebidas no pátio com liberdade para brincar, explorar e se reencontrar com os amigos antes do dia começar. O ambiente ao ar livre já é o primeiro professor do dia.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia-painel" id="diaPainel1" role="tabpanel" aria-labelledby="diaTab1" style="background-image:url('OneDrive_1_19-05-2026/roda.jpeg')">
+      <div class="dia-painel-inner">
+        <div class="dia-icon-wrap">🟣</div>
+        <div>
+          <p class="dia-painel-hora">8h30 — Roda inicial</p>
+          <h3>Roda de conversa</h3>
+          <p>Educadores e crianças se reúnem em roda para combinar o dia, compartilhar novidades e planejar juntos as atividades. Na pedagogia Freinet, a voz de cada criança tem peso real nas decisões do grupo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia-painel" id="diaPainel2" role="tabpanel" aria-labelledby="diaTab2" style="background-image:url('projeto.png')">
+      <div class="dia-painel-inner">
+        <div class="dia-icon-wrap">🔨</div>
+        <div>
+          <p class="dia-painel-hora">9h00 — Tempo de projeto</p>
+          <h3>Mãos na massa</h3>
+          <p>É aqui que a aprendizagem ganha forma: leitura, escrita, matemática e ciências através de projetos reais escolhidos pelas próprias crianças. Construir, criar, investigar — tudo com intencionalidade pedagógica e alinhado ao currículo do MEC.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia-painel" id="diaPainel3" role="tabpanel" aria-labelledby="diaTab3" style="background-image:url('natureza.jpg'); background-position: center 55%;">
+      <div class="dia-painel-inner">
+        <div class="dia-icon-wrap">🌿</div>
+        <div>
+          <p class="dia-painel-hora">10h00 — Tempo na natureza</p>
+          <h3>A floresta como sala de aula</h3>
+          <p>Horta, trilha, observação de insetos, construções com galhos — o Sítio tem mais de 8 mil m² de área verde para explorar. O contato com a natureza desenvolve autonomia, atenção e respeito ao mundo vivo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia-painel" id="diaPainel4" role="tabpanel" aria-labelledby="diaTab4" style="background-image:url('lanche.jpg'); background-position: center 70%;">
+      <div class="dia-painel-inner">
+        <div class="dia-icon-wrap">🍎</div>
+        <div>
+          <p class="dia-painel-hora">11h00 — Lanche coletivo</p>
+          <h3>Comer junto também educa</h3>
+          <p>O momento do lanche é coletivo e intencional: as crianças participam do preparo, organizam a mesa e aprendem sobre alimentação saudável. É um tempo de pausa, conversa e cuidado com o corpo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia-painel" id="diaPainel5" role="tabpanel" aria-labelledby="diaTab5" style="background-image:url('galeria10.png'); background-position: center 70%;">
+      <div class="dia-painel-inner">
+        <div class="dia-icon-wrap">🤝</div>
+        <div>
+          <p class="dia-painel-hora">12h00 — Encerramento</p>
+          <h3>Roda de fechamento</h3>
+          <p>O dia termina como começou: em roda. As crianças compartilham o que aprenderam, o que gostaram e o que querem fazer amanhã. Esse momento fortalece a escuta, a reflexão e o sentido de pertencimento ao grupo.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="dia-nav" role="tablist" aria-label="Navegação do dia">
+      <button class="dia-nav-dot active" id="diaDot0" onclick="ativarDia(0)" aria-label="Chegada"></button>
+      <button class="dia-nav-dot" id="diaDot1" onclick="ativarDia(1)" aria-label="Roda"></button>
+      <button class="dia-nav-dot" id="diaDot2" onclick="ativarDia(2)" aria-label="Projeto"></button>
+      <button class="dia-nav-dot" id="diaDot3" onclick="ativarDia(3)" aria-label="Natureza"></button>
+      <button class="dia-nav-dot" id="diaDot4" onclick="ativarDia(4)" aria-label="Lanche"></button>
+      <button class="dia-nav-dot" id="diaDot5" onclick="ativarDia(5)" aria-label="Encerramento"></button>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE ESCOLHER -->
+<section class="section porque">
+  <div class="container">
+    <div class="porque-intro">
+      <span class="section-tag">Por que escolher</span>
+      <h2 class="section-title">Por que escolher o <span>Sítio-Escola Geranium?</span></h2>
+      <p class="section-subtitle">No Sítio-Escola Geranium, a educação acontece além das paredes. Unimos a natureza ao rigor acadêmico para formar crianças protagonistas.</p>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-card">
+        <div class="porque-icon">
+          <img src="icn-c-1.png" alt="Aprender na Prática" width="36" height="36">
+        </div>
+        <h3>Aprender na Prática</h3>
+        <p>A natureza é nossa sala de aula, onde conceitos de ciências e matemática ganham vida.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-icon">
+          <img src="icn-c-2.png" alt="Metodologia Freinet" width="36" height="36">
+        </div>
+        <h3>Metodologia Freinet</h3>
+        <p>Baseados nos princípios de Freinet e das Metodologias Ativas, estimulamos a autonomia, a cooperação e o pensamento crítico.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-icon">
+          <img src="icn-c-3.png" alt="Acolhimento Real" width="36" height="36">
+        </div>
+        <h3>Acolhimento Real</h3>
+        <p>Um ambiente seguro e afetivo que respeita o tempo e a individualidade de cada criança.</p>
+      </div>
+      <div class="porque-card">
+        <div class="porque-icon">
+          <img src="icn-c-4.png" alt="Tradição e Segurança" width="36" height="36">
+        </div>
+        <h3>Tradição e Segurança</h3>
+        <p>Mais de 40 anos de história do Sítio Geranium semeando uma educação com propósito e pé no chão.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — após Por que Escolher -->
+<div class="cta-banner">
+  <p>Pronto para dar o próximo passo?</p>
+  <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20saber%20sobre%20as%20matr%C3%ADculas%20do%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Matricule seu filho
+  </a>
+</div>
+
+<!-- PROJETOS -->
+<section class="section projetos">
+  <div class="container">
+    <div class="projetos-intro">
+      <span class="section-tag">Nossos projetos</span>
+      <h2 class="section-title">Projetos que <span>transformam</span></h2>
+    </div>
+    <div class="projetos-grid">
+      <div class="projeto-card">
+        <img src="Projeto emoções.png" alt="Projeto das Emoções" loading="lazy">
+        <div class="projeto-label">Projeto das Emoções</div>
+      </div>
+      <div class="projeto-card">
+        <img src="educacao-ambiental.jpeg" alt="Educação Ambiental" loading="lazy">
+        <div class="projeto-label">Educação Ambiental</div>
+      </div>
+      <div class="projeto-card">
+        <img src="projeto xadrez.png" alt="Projeto Xadrez" loading="lazy">
+        <div class="projeto-label">Projeto Xadrez</div>
+      </div>
+      <div class="projeto-card">
+        <img src="projeto originarios.png" alt="Povos Originários" loading="lazy">
+        <div class="projeto-label">Povos Originários</div>
+      </div>
+      <div class="projeto-card">
+        <img src="afrobrasil.jpg" alt="Projeto Afrobrasil" loading="lazy">
+        <div class="projeto-label">Projeto Afrobrasil</div>
+      </div>
+      <div class="projeto-card">
+        <img src="projeto alimentacao saudavel.png" alt="Alimentação Saudável" loading="lazy" style="object-position: center top;">
+        <div class="projeto-label">Alimentação Saudável</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<img src="Brandbook_Geranium (4)-04.png" class="divisor-bb" alt="" aria-hidden="true">
+
+<!-- GALERIA -->
+<section class="section galeria" id="galeria">
+  <div class="container">
+    <div class="galeria-intro">
+      <span class="section-tag">Fotos do sítio</span>
+      <h2 class="section-title"><span class="leaf-deco"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>A vida no Sítio</h2>
+      <p class="section-subtitle">Uma escola onde cada canto é uma descoberta. Veja como é o dia a dia das nossas crianças.</p>
+    </div>
+    <div class="galeria-grid">
+      <!-- Para adicionar fotos: copie um bloco <div class="galeria-item"> abaixo e troque o src da imagem -->
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria.jpeg" alt="Crianças no sítio" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria 2.jpeg" alt="Atividade ao ar livre" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria3.jpeg" alt="Aprendizado na natureza" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria4.jpeg" alt="Projeto escolar" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria5.jpeg" alt="Espaço da escola" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria6.jpeg" alt="Crianças brincando" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria8.jpeg" alt="Dia no sítio" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria 7.png" alt="Atividade no sítio" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria 9.png" alt="Atividade pedagógica" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria10.png" alt="Aprendizado na natureza" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria11.png" alt="Crianças aprendendo" loading="lazy">
+      </div>
+      <div class="galeria-item" onclick="abrirLightbox(this)">
+        <img src="galeria12.png" alt="Espaço verde" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="fecharLightbox(event)">
+  <button class="lightbox-close" onclick="fecharLightbox()">✕</button>
+  <img src="" id="lightbox-img" alt="">
+</div>
+
+<!-- EVENTOS -->
+<section class="section eventos" id="eventos">
+  <div class="container">
+    <div class="eventos-intro">
+      <span class="section-tag">Agenda do sítio</span>
+      <h2 class="section-title"><span class="leaf-deco"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></span>Eventos abertos ao público</h2>
+      <p class="section-subtitle">Momentos especiais para conhecer o Sítio-Escola Geranium de perto. Traga a família!</p>
+    </div>
+    <div class="eventos-grid">
+      <!-- Para adicionar um evento: copie um bloco .evento-card abaixo e preencha com os dados reais -->
+      <div class="evento-card">
+        <div class="evento-data">
+          <span class="evento-dia">28</span>
+          <span class="evento-mes-ano">
+            <span class="evento-mes">Maio</span>
+            <span class="evento-ano">2026</span>
+          </span>
+        </div>
+        <span class="evento-tipo">Dia Aberto</span>
+        <h3>Visita ao Sítio-Escola</h3>
+        <p>Venha conhecer nossa escola de perto! Mostre para seus filhos como é aprender rodeado de natureza. Visita guiada com a equipe pedagógica.</p>
+        <div class="evento-cta">
+          <a href="https://wa.me/5561998414784?text=Olá!%20Tenho%20interesse%20no%20Dia%20Aberto%20do%20dia%2028%20de%20maio." target="_blank">
+            Confirmar presença →
+          </a>
+        </div>
+      </div>
+      <div class="evento-card">
+        <div class="evento-data">
+          <span class="evento-dia">07</span>
+          <span class="evento-mes-ano">
+            <span class="evento-mes">Jun</span>
+            <span class="evento-ano">2026</span>
+          </span>
+        </div>
+        <span class="evento-tipo">Oficina</span>
+        <h3>Oficina de Arte com Argila</h3>
+        <p>Oficina aberta para crianças de 3 a 10 anos. Mãos na terra, criatividade em alto nível! Vagas limitadas — confirme sua presença.</p>
+        <div class="evento-cta">
+          <a href="https://wa.me/5561998414784?text=Olá!%20Tenho%20interesse%20na%20Oficina%20de%20Argila%20do%20dia%207%20de%20junho." target="_blank">
+            Reservar vaga →
+          </a>
+        </div>
+      </div>
+      <div class="evento-card">
+        <div class="evento-data">
+          <span class="evento-dia">21</span>
+          <span class="evento-mes-ano">
+            <span class="evento-mes">Jun</span>
+            <span class="evento-ano">2026</span>
+          </span>
+        </div>
+        <span class="evento-tipo">Festa</span>
+        <h3>Festa Junina do Geranium</h3>
+        <p>Nossa festa junina anual é aberta para toda a comunidade! Comidas típicas, quadrilha das crianças e muita alegria num cenário único.</p>
+        <div class="evento-cta">
+          <a href="https://wa.me/5561998414784?text=Olá!%20Gostaria%20de%20saber%20mais%20sobre%20a%20Festa%20Junina%20do%20Geranium." target="_blank">
+            Saiba mais →
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="eventos-rodape">
+      <p>Acompanhe também pelo Instagram para novidades e eventos especiais</p>
+      <a href="https://www.instagram.com/sitioescolageranium/" target="_blank" class="btn-whatsapp" style="background:var(--verde-escuro)">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="white" stroke="none"/></svg>
+        @sitioescolageranium
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DEPOIMENTOS ESCRITOS -->
+<section class="section dep-escritos">
+  <div class="container">
+    <div style="text-align:center;max-width:580px;margin:0 auto 48px">
+      <span class="section-tag">Depoimentos</span>
+      <h2 class="section-title">O que as famílias <span>falam de nós</span></h2>
+    </div>
+    <div class="dep-grid">
+      <div class="dep-card">
+        <div class="dep-aspas">"</div>
+        <div class="dep-stars">★★★★★</div>
+        <p>Gostaria de agradecer a toda equipe do Jardim Geranium por todo carinho, empenho e competência. O olhar para o ser humano em sua integralidade, com ações e ensinamentos baseados na razão e levando em conta os sentimentos e emoções é o que mais me conforta e enche meu coração.</p>
+        <div class="dep-nome">Débora — mãe da Bruna</div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-aspas">"</div>
+        <div class="dep-stars">★★★★★</div>
+        <p>Me sinto feliz e satisfeita por ter encontrado e escolhido essa escola para a Flora passar sua primeira infância. Lá ela aprende a ser independente, brinca livre na natureza, faz trilhas e aprende como funcionam os ciclos naturais.</p>
+        <div class="dep-nome">Natália — mãe da Flora</div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-aspas">"</div>
+        <div class="dep-stars">★★★★★</div>
+        <p>Aprenderam muito sobre a natureza e sobre a origem dos alimentos. Socializaram com crianças de várias idades e aprenderam a lidar com as diferenças. A experiência foi maravilhosa! Tudo conduzido com excelência pelas professoras.</p>
+        <div class="dep-nome">Rodrigo — pai de alunos</div>
+      </div>
+      <div class="dep-card">
+        <div class="dep-aspas">"</div>
+        <div class="dep-stars">★★★★★</div>
+        <p>O Sítio-Escola Geranium tem sido tudo que queríamos proporcionar à nossa filha. As professoras são maravilhosas! Lá é uma extensão de nossa casa, com o contato com a natureza, respeito à individualidade e estímulo às suas potencialidades.</p>
+        <div class="dep-nome">Karen — mãe da Gabriela</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — após Depoimentos Escritos -->
+<div class="cta-banner cta-banner-laranja">
+  <p>Agende uma visita e venha sentir de perto!</p>
+  <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp" style="background:var(--verde-escuro)">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Agende uma visita
+  </a>
+</div>
+
+<!-- DEPOIMENTOS VÍDEO -->
+<section class="dep-video">
+  <div class="container">
+    <span class="section-tag">Em vídeo</span>
+    <h2 class="section-title" style="margin-top:4px">Veja o que nossas famílias contam</h2>
+    <div style="margin-top:36px">
+      <div class="swiper" id="slider-videos">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('of2ra5hcDNM')"><img src="depoimento-1.jpg" alt="Depoimento" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('FKs-GWyiIOQ')"><img src="depoimento-2.jpg" alt="Depoimento" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('ah4Di8MvP24')"><img src="aprender-em-comunidade.png" alt="Aprender em comunidade" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('8U6zD7EvDfc')"><img src="historia.png" alt="Nossa história" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('upRKYv6RTMI')"><img src="Mirim.png" alt="Mirim" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('OFnRmOahapw')"><img src="depoimento-3.jpg" alt="Depoimento" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('CzwpzNBWFeQ')"><img src="depoimento-4.jpg" alt="Depoimento" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+          <div class="swiper-slide"><div class="video-slide" onclick="abrirVideo('utfg1i3hh78')"><img src="Lethicia.png" alt="Ensino fundamental" loading="lazy"><div class="video-play"><div class="play-circle"><svg width="20" height="20" viewBox="0 0 24 24" fill="#2B4A1E"><path d="M8 5v14l11-7z"/></svg></div></div></div></div>
+        </div>
+      </div>
+      <div class="slider-nav">
+        <button class="slider-btn" id="btn-prev-video"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button class="slider-btn" id="btn-next-video"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HORÁRIOS -->
+<div class="horarios">
+  <div class="container">
+    <h2>Nossos Horários</h2>
+    <div class="horarios-grid">
+      <div class="horario-card">
+        <h3>Educação Infantil</h3>
+        <p>Período matutino<br><strong style="font-size:1.2rem">8h às 12h</strong></p>
+      </div>
+      <div class="horario-card">
+        <h3>Ensino Fundamental</h3>
+        <p>Período matutino<br><strong style="font-size:1.2rem">7h45 às 12h30</strong></p>
+      </div>
+    </div>
+    <div class="horario-extra">
+      <strong>Contraturno (vespertino):</strong> Para famílias que precisam que a criança fique mais tempo na escola, funcionamos até as 17h30 com tolerância até as 18h.
+    </div>
+  </div>
+</div>
+
+<!-- PODCAST -->
+<section class="section podcast">
+  <div class="container">
+    <div class="podcast-grid">
+      <div class="podcast-txt">
+        <span class="section-tag">Podcast</span>
+        <h2 class="section-title" style="margin-top:4px">Conheça o nosso <span>podcast</span></h2>
+        <div class="podcast-badge">🎙 A Gente Te Conta</div>
+        <p>Quer entender a fundo o que faz o Sítio-Escola Geranium ser tão especial? No podcast <strong>"A Gente Te Conta"</strong>, explicamos nossa base de ensino, nossos valores e como aplicamos nossa metodologia no dia a dia — com histórias reais do cotidiano na escola.</p>
+        <p>É o espaço ideal para você conhecer nossa proposta, ouvir nossos parceiros e entender como a conexão com a natureza transforma a vida das crianças. Acesse na sua plataforma favorita!</p>
+        <div class="plataformas">
+          <a href="https://open.spotify.com/show/6vKepU63Z6fzKgknmVS8fm" class="btn-plataforma" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            Spotify
+          </a>
+          <a href="https://podcasts.apple.com/dk/podcast/quer-saber-mais-sobre-sustentabilidade/id1760828370" class="btn-plataforma" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm.5 5a1.5 1.5 0 110 3 1.5 1.5 0 010-3zm2 10h-4v-1h1V12h-1v-1h3v5h1v1z"/></svg>
+            Apple Podcasts
+          </a>
+          <a href="https://www.deezer.com/br/show/1001129691" class="btn-plataforma" target="_blank">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm4.5 8.25h-1.875c-.414 0-.75.336-.75.75V12h2.625l-.375 2.625H13.875V21h-2.625v-6.375H9.375V12H11.25V9c0-1.864 1.511-3.375 3.375-3.375H16.5v2.625z"/></svg>
+            Deezer
+          </a>
+        </div>
+      </div>
+      <div class="podcast-logo-organico">
+        <div class="podcast-logo-blob">
+          <img src="logo-podcast.png" alt="Podcast A Gente Te Conta">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCALIZAÇÃO -->
+<section class="section localizacao">
+  <div class="container">
+    <div class="loc-grid">
+      <div class="loc-txt">
+        <span class="section-tag">Nos encontre</span>
+        <h2 class="section-title" style="margin-top:4px">Venha fazer uma <span>visita</span></h2>
+        <p>Venha sentir o cheiro da terra e ver de perto como o aprendizado ganha vida no Sítio-Escola Geranium. Agende sua visita e conheça nosso espaço!</p>
+        <div class="endereco-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2B4A1E" stroke-width="2" style="flex-shrink:0;margin-top:2px"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <p>Sítio Geranium, via de ligação Taguatinga-Samambaia.<br>Núcleo Rural de Taguatinga, Chácara 29.</p>
+        </div>
+        <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20agendar%20uma%20visita%20ao%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="btn-whatsapp">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Agendar visita
+        </a>
+      </div>
+      <div class="loc-mapa">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3838.19670704914!2d-48.07701812495145!3d-15.84625548480136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935a33bf788eece5%3A0xc099a802df346218!2sS%C3%ADtio-Escola%20Geranium!5e0!3m2!1spt-BR!2sbr!4v1779273233019!5m2!1spt-BR!2sbr" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:var(--bege)">
+  <div class="container">
+    <div style="text-align:center;max-width:600px;margin:0 auto 48px">
+      <span class="section-tag">Tire suas dúvidas</span>
+      <h2 class="section-title">Perguntas <span>frequentes</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">
+          Como funciona o processo de matrícula?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-resposta">
+          <p>O processo começa com uma visita ao Sítio-Escola! Entre em contato pelo WhatsApp, agende um horário e venha conhecer o espaço com a família. Depois da visita, disponibilizamos toda a documentação necessária para formalizar a matrícula.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">
+          A escola segue as diretrizes do MEC?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-resposta">
+          <p>Sim! Oferecemos ensino regular com todas as diretrizes do MEC para Educação Infantil e Ensino Fundamental 1. A metodologia Freinet complementa o currículo oficial — seus filhos aprendem tudo que precisam, com autonomia e protagonismo.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">
+          As turmas são reduzidas?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-resposta">
+          <p>Sim, trabalhamos intencionalmente com turmas pequenas. Isso garante atenção individualizada a cada criança, respeita seu ritmo de aprendizado e permite construir vínculos reais de confiança entre professores, alunos e famílias.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">
+          Como é o espaço físico da escola?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-resposta">
+          <p>Estamos no Núcleo Rural de Taguatinga, com ampla área verde, horta, árvores frutíferas e infraestrutura segura. O espaço ao ar livre é uma extensão real da sala de aula — as crianças aprendem plantando, explorando e se conectando com a natureza todo dia.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-pergunta" onclick="toggleFaq(this)">
+          O que é a Metodologia Freinet?
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-resposta">
+          <p>Criada pelo educador francês Célestin Freinet, é uma metodologia que coloca a criança como protagonista do aprendizado. Valoriza a expressão livre, o trabalho cooperativo, a curiosidade natural e o aprender pela experiência real — perfeito para o ambiente do Sítio!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — após FAQ -->
+<div class="cta-banner">
+  <p>Ficou com alguma dúvida? Fale com a gente!</p>
+  <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Tenho%20d%C3%BAvidas%20sobre%20o%20S%C3%ADtio-Escola%20Geranium%20e%20gostaria%20de%20conversar." target="_blank" class="btn-whatsapp">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Fale conosco
+  </a>
+</div>
+
+<img src="Brandbook_Geranium (4)-04.png" class="divisor-bb" alt="" aria-hidden="true">
+
+<!-- RODAPÉ -->
+<footer class="rodape">
+  <img src="idv escola(elementos) (1).png" alt="" class="rodape-idv" aria-hidden="true">
+  <img src="idv escola(elementos).png" alt="" class="rodape-idv-left" aria-hidden="true">
+
+  <div class="rodape-inner">
+    <!-- Brand -->
+    <div class="rodape-brand">
+      <img src="logo-rodape-sitio.png" alt="Sítio-Escola Geranium" class="rodape-logo">
+    </div>
+
+    <!-- Contatos em linha -->
+    <div class="rodape-contatos">
+      <a href="https://wa.me/5561998414784?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20o%20S%C3%ADtio-Escola%20Geranium." target="_blank" class="rodape-btn rodape-btn-wa">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="tel:+5561998414784" class="rodape-btn rodape-btn-tel">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z"/></svg>
+        (61) 99841-4784
+      </a>
+      <a href="mailto:contato@sitioescolageranium.com.br" class="rodape-btn rodape-btn-email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        E-mail
+      </a>
+    </div>
+
+    <!-- Direita: social + copyright -->
+    <div class="rodape-direita">
+      <div class="rodape-social">
+        <a href="https://www.instagram.com/sitioescolageranium/" target="_blank" title="Instagram">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".5" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+      <p class="rodape-copy">© 2026 Sítio-Escola Geranium.<br>Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="swiper-bundle.min.js"></script>
+<script>
+  // Header scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('header').classList.toggle('scrolled', window.scrollY > 60);
+  });
+
+  // Slider vídeos
+  new Swiper('#slider-videos', {
+    slidesPerView: 1.1,
+    spaceBetween: 14,
+    navigation: { nextEl: '#btn-next-video', prevEl: '#btn-prev-video' },
+    breakpoints: {
+      480: { slidesPerView: 1.5, spaceBetween: 16 },
+      768: { slidesPerView: 2.1, spaceBetween: 20 },
+      1024: { slidesPerView: 2.7, spaceBetween: 20 }
+    }
+  });
+
+  // Modal vídeo
+  function abrirVideo(id) {
+    document.getElementById('video-iframe').src = 'https://www.youtube.com/embed/' + id + '?autoplay=1&rel=0';
+    document.getElementById('modal-video').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function fecharVideo() {
+    document.getElementById('video-iframe').src = '';
+    document.getElementById('modal-video').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function fecharVideoClick(e) { if (e.target === e.currentTarget) fecharVideo(); }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { fecharVideo(); fecharLightbox(); }
+  });
+
+  // Lightbox galeria
+  function abrirLightbox(el) {
+    var img = el.querySelector('img');
+    document.getElementById('lightbox-img').src = img.src;
+    document.getElementById('lightbox-img').alt = img.alt;
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function fecharLightbox(e) {
+    if (e && e.target !== e.currentTarget && !e.target.classList.contains('lightbox-close')) return;
+    document.getElementById('lightbox').classList.remove('active');
+    document.getElementById('lightbox-img').src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Um dia no Sítio — tabs com auto-avanço
+  var diaTotal = 6;
+  var diaAtual = 0;
+  var diaTimer = null;
+  var diaPausado = false;
+  var diaDuracao = 3500;
+
+  function ativarDia(index) {
+    clearTimeout(diaTimer);
+    // limpar barra anterior
+    var barAnterior = document.getElementById('diaBar' + diaAtual);
+    if (barAnterior) { barAnterior.style.transition = 'none'; barAnterior.style.width = '0%'; }
+
+    diaAtual = index;
+    for (var i = 0; i < diaTotal; i++) {
+      var tab = document.getElementById('diaTab' + i);
+      var painel = document.getElementById('diaPainel' + i);
+      var dot = document.getElementById('diaDot' + i);
+      var bar = document.getElementById('diaBar' + i);
+      var ativo = (i === index);
+      tab.classList.toggle('active', ativo);
+      tab.setAttribute('aria-selected', ativo ? 'true' : 'false');
+      painel.classList.toggle('active', ativo);
+      dot.classList.toggle('active', ativo);
+      if (bar) { bar.style.transition = 'none'; bar.style.width = '0%'; }
+    }
+    // scroll horizontal da tab ativa dentro do container (sem mover a página)
+    var tabAtiva = document.getElementById('diaTab' + index);
+    if (tabAtiva && diaTabsEl) {
+      var tabLeft = tabAtiva.offsetLeft;
+      var tabWidth = tabAtiva.offsetWidth;
+      var containerWidth = diaTabsEl.offsetWidth;
+      var targetScroll = tabLeft - (containerWidth / 2) + (tabWidth / 2);
+      diaTabsEl.scrollTo({ left: targetScroll, behavior: 'smooth' });
+    }
+    // iniciar barra de progresso
+    var barAtiva = document.getElementById('diaBar' + index);
+    if (barAtiva) {
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          barAtiva.style.transition = 'width ' + diaDuracao + 'ms linear';
+          barAtiva.style.width = '100%';
+        });
+      });
+    }
+    if (!diaPausado) {
+      diaTimer = setTimeout(function() {
+        ativarDia((index + 1) % diaTotal);
+      }, diaDuracao);
+    }
+  }
+
+  var diaTabsEl = document.getElementById('diaTabs');
+  if (diaTabsEl) {
+    diaTabsEl.addEventListener('mouseenter', function() {
+      diaPausado = true;
+      clearTimeout(diaTimer);
+      var barAtiva = document.getElementById('diaBar' + diaAtual);
+      if (barAtiva) { barAtiva.style.transition = 'none'; barAtiva.style.width = '0%'; }
+    });
+    diaTabsEl.addEventListener('mouseleave', function() {
+      diaPausado = false;
+      ativarDia(diaAtual);
+    });
+  }
+
+  ativarDia(0);
+
+  // FAQ accordion
+  function toggleFaq(btn) {
+    var item = btn.closest('.faq-item');
+    var resp = item.querySelector('.faq-resposta');
+    var isOpen = btn.classList.contains('open');
+    document.querySelectorAll('.faq-pergunta.open').forEach(function(b) {
+      b.classList.remove('open');
+      b.closest('.faq-item').querySelector('.faq-resposta').classList.remove('open');
+    });
+    if (!isOpen) { btn.classList.add('open'); resp.classList.add('open'); }
+  }
+</script>
+</body>
+</html>
